@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'hw-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "hw-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = 'hello-world';
+  numberOfBooks = 61;
+  phrase = `j'affiche ma valeur :`;
 }

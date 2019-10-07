@@ -1,0 +1,36 @@
+<!-- <select>
+  <option>1</option>
+  <option>2</option>
+  <option [selected]="isSelected">3</option>
+  <option>4</option>
+</select>
+
+<div [hidden]="isHidden" [style.color]="color" [style.background]="background" (click)="getDiv('je suis dans la div')">
+  <button (click)="getAlert('je suis dans le boutton', $event)">CLIQUEZ !</button>
+
+  J'affiche ma div
+</div>
+
+<textarea (keydown.shift.a)="getPressSpace('tu as appuyé sur la touche espace')"></textarea>
+
+<input #mavariablelocale />
+
+<button (click)="mavariablelocale.focus(); getVariableLocale(mavariablelocale.value)">Valider</button> -->
+
+<!-- <ng-template [ngIf]="isHidden"> <h2>un exemple de directive structurelle</h2> </ng-template>
+<h2 *ngIf="isHidden; else empty">un exemple de directive structurelle</h2>
+
+<ng-template #empty> <h3>ngIf a la valeur false</h3> </ng-template> -->
+
+<ul>
+  <li *ngFor="let book of books; let i = index; let e = even; let f = first; let l = last">
+    <div [ngClass]="{ gris: e, rouge: f, bleu: l }">{{ i + 1 }} {{ book.name }} de {{ book.author }}</div>
+  </li>
+</ul>
+
+<div [ngSwitch]="books.length">
+  <p *ngSwitchCase="0">pas de valeur</p>
+  <p *ngSwitchCase="1">1 valeur</p>
+  <p *ngSwitchCase="2">2 valeurs</p>
+  <p *ngSwitchDefault>+ de 2 valeurs</p>
+</div>
