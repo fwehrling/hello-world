@@ -22,7 +22,7 @@
 
 <ng-template #empty> <h3>ngIf a la valeur false</h3> </ng-template> -->
 
-<ul>
+<!-- <ul>
   <li *ngFor="let book of books; let i = index; let e = even; let f = first; let l = last">
     <div [ngClass]="{ gris: e, rouge: f, bleu: l }">{{ i + 1 }} {{ book.name }} de {{ book.author }}</div>
   </li>
@@ -33,4 +33,17 @@
   <p *ngSwitchCase="1">1 valeur</p>
   <p *ngSwitchCase="2">2 valeurs</p>
   <p *ngSwitchDefault>+ de 2 valeurs</p>
-</div>
+</div> -->
+
+<!-- <h2>Se connecter</h2>
+<form (ngSubmit)="register()">
+  <div>
+    <label>Username</label> <input name="username" [(ngModel)]="user.username" required #username="ngModel" />
+    <div *ngIf="username.dirty && username.hasError('required')">Username is required</div>
+  </div>
+  <div>
+    <label>Password</label> <input type="password" name="password" [(ngModel)]="user.password" required #password="ngModel" />
+    <div *ngIf="password.dirty && password.hasError('required')">Password is required</div>
+  </div>
+  <button type="submit" [disabled]="username.invalid || password.invalid">Register</button>
+</form> -->

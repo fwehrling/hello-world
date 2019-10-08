@@ -1,4 +1,8 @@
 import { Component, OnInit } from "@angular/core";
+class User {
+  username: string;
+  password: string;
+}
 
 @Component({
   selector: "hw-books",
@@ -12,8 +16,12 @@ export class BooksComponent implements OnInit {
   background: string;
 
   books: object[];
-
+  user = new User();
   constructor() {}
+
+  register() {
+    console.log(this.user);
+  }
 
   ngOnInit() {
     this.isSelected = false;
