@@ -22,12 +22,13 @@
 
 <ng-template #empty> <h3>ngIf a la valeur false</h3> </ng-template> -->
 
-<!-- <ul>
+<ul>
   <li *ngFor="let book of books; let i = index; let e = even; let f = first; let l = last">
     <div [ngClass]="{ gris: e, rouge: f, bleu: l }">{{ i + 1 }} {{ book.name }} de {{ book.author }}</div>
   </li>
 </ul>
 
+<!--
 <div [ngSwitch]="books.length">
   <p *ngSwitchCase="0">pas de valeur</p>
   <p *ngSwitchCase="1">1 valeur</p>

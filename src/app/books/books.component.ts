@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { DataService } from "../services/data.service";
 class User {
   username: string;
   password: string;
@@ -17,7 +18,7 @@ export class BooksComponent implements OnInit {
 
   books: object[];
   user = new User();
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   register() {
     console.log(this.user);
@@ -28,21 +29,7 @@ export class BooksComponent implements OnInit {
     this.isHidden = false;
     this.color = "red";
     this.background = "yellow";
-
-    this.books = [
-      {
-        name: "livre1",
-        author: "author1"
-      },
-      {
-        name: "livre2",
-        author: "author2"
-      },
-      {
-        name: "livre3",
-        author: "author3"
-      }
-    ];
+    this.books = this.dataService.getData();
   }
 
   getAlert(msg: string, event: any): void {
