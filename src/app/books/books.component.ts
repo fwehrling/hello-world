@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "../services/data.service";
+import { Book } from "../interfaces/book";
 class User {
   username: string;
   password: string;
@@ -16,7 +17,7 @@ export class BooksComponent implements OnInit {
   color: string;
   background: string;
 
-  books: object[];
+  books: Book[];
   user = new User();
   constructor(private dataService: DataService) {}
 

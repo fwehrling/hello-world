@@ -1,0 +1,8 @@
+{{ fruits | slice: -2 | json }}
+<ul>
+  <li *ngFor="let fruit of (fruits | slice: 0:2)">
+    le fruit {{ fruit.name | titlecase }} est de couleur {{ fruit.color | uppercase }}
+  </li>
+</ul>
+
+<div>{{ "1570525380000" | date: "longDate" }}</div>
