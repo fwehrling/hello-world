@@ -9,9 +9,10 @@ import { FromNowPipe } from './pipes/from-now.pipe';
 import { ParentComponent } from './parent/parent.component';
 import { EnfantComponent } from './enfant/enfant.component';
 import { VideoPipe } from './pipes/video.pipe';
+import { DoNothningDirective } from './directives/do-nothning.directive';
 
 @NgModule({
-  declarations: [AppComponent, BooksComponent, FruitComponent, FromNowPipe, ParentComponent, EnfantComponent, VideoPipe],
+  declarations: [AppComponent, BooksComponent, FruitComponent, FromNowPipe, ParentComponent, EnfantComponent, VideoPipe, DoNothningDirective],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,4 +5,6 @@
   </li>
 </ul>
 
-<div>{{ "2016-05-23" | fromNow }}</div>
+<div doNothing>{{ "2016-05-23" | fromNow }}</div>
+
+<p doNothing class="test" [logText]="'un message de log'">Test Directive</p>
