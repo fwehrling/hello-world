@@ -1,6 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { DataService } from "../services/data.service";
 import { Book } from "../interfaces/book";
+import { SubjectService } from "../services/subject.service";
+import { Subscription } from "rxjs";
 class User {
   username: string;
   password: string;
@@ -11,7 +13,7 @@ class User {
   templateUrl: "./books.component.html",
   styleUrls: ["./books.component.css"]
 })
-export class BooksComponent implements OnInit {
+export class BooksComponent implements OnInit, OnDestroy {
   isSelected: boolean;
   isHidden: boolean;
   color: string;
@@ -19,7 +21,9 @@ export class BooksComponent implements OnInit {
 
   books: Book[];
   user = new User();
-  constructor(private dataService: DataService) {}
+  subject: Subscription;
+
+  constructor(private dataService: DataService, private subjectService: SubjectService) {}
 
   register() {
     console.log(this.user);
@@ -31,6 +35,11 @@ export class BooksComponent implements OnInit {
     this.color = "red";
     this.background = "yellow";
     this.books = this.dataService.getData();
+    this.subject = this.subjectService.getMessage().subscribe((msg: string) => console.log("books", msg));
+  }
+
+  ngOnDestroy(): void {
+    this.subject.unsubscribe();
   }
 
   getAlert(msg: string, event: any): void {

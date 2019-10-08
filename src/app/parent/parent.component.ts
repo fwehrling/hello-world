@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Video } from "../interfaces/video";
 import { VideoService } from "../services/video.service";
+import { SubjectService } from "../services/subject.service";
 
 @Component({
   selector: "hw-parent",
@@ -10,13 +11,13 @@ import { VideoService } from "../services/video.service";
 export class ParentComponent implements OnInit {
   videos: Video[];
 
-  constructor(private videoService: VideoService) {}
+  constructor(private videoService: VideoService, private subjectService: SubjectService) {}
 
   ngOnInit() {
     this.videos = this.videoService.getVideo();
   }
 
   videoSelected(value: Video) {
-    console.log("parent", value);
+    this.subjectService.setMessage(value.titre);
   }
 }
