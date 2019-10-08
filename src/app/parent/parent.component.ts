@@ -20,4 +20,8 @@ export class ParentComponent implements OnInit {
   videoSelected(value: Video) {
     this.subjectService.setMessage(value.titre);
   }
+
+  addVideo() {
+    this.videos = [...this.videos, { titre: "test99", date: new Date(), cote: 8, vu: false }];
+  }
 }
