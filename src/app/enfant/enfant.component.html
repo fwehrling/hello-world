@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let video of videos">
+    <div (click)="sendParent(video)">{{ video | video }}</div>
+  </li>
+</ul>
