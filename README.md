@@ -1,3 +1,3 @@
 # HelloWorld
 
-> N'oubliez pas de lancer la commande **npm install** avant de lancer l'application
+> N'oubliez pas d'utiliser la commande **npm install** avant de lancer l'application
